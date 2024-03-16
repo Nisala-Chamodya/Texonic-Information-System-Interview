@@ -20,4 +20,8 @@ public class DesignationController {
 
         return  new ResponseUtill(200,"Designation Saved",null);
     }
+    @GetMapping
+    public ResponseUtill getAllDesignation(){
+        return new ResponseUtill(200,"Get All Designation",designationService.getAllDesignation());
+    }
 }

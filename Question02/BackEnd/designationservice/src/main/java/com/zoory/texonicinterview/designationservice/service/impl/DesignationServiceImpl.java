@@ -8,6 +8,8 @@ import com.zoory.texonicinterview.designationservice.util.IdGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DesignationServiceImpl implements DesignationService {
     @Autowired
@@ -26,5 +28,10 @@ public class DesignationServiceImpl implements DesignationService {
             throw new IllegalArgumentException("Id is already exists");
         }
 
+    }
+
+    @Override
+    public List<Designation> getAllDesignation() {
+        return designationRepo.findAll();
     }
 }
