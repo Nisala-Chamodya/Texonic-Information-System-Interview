@@ -31,7 +31,9 @@
           <input type="text" class="form-control" id="remarks" />
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" id="save-designation-btn">
+          Save
+        </button>
       </form>
       <!--End Form-->
 
@@ -58,8 +60,22 @@
     </main>
     <!--End main body-->
 
+    <!--jquery-->
+    <!---jquery-->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+
     <!--add boostrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
 "></script>
+    <!--Start sweet alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--end sweet alert-->
+
+    <!--Controller files-->
+    <script src="../js/DesignationController.js"></script>
   </body>
 </html>
