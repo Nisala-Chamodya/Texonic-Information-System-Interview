@@ -5,6 +5,9 @@ $("#save-designation-btn").click(() => {
 $("#update-designation-btn").click(() => {
   updateDesignation();
 });
+$("#delete-designation-btn").click(() => {
+  deleteDesignation();
+});
 
 function saveDesignation() {
   let designationName = $("#designationName").val();
@@ -95,6 +98,31 @@ function updateDesignation() {
         loardAllDesignation();
         clearAllDesignation();
       }
+    },
+  });
+}
+
+function deleteDesignation() {
+  let dId = $("#dId").val();
+  $.ajax({
+    url: "http://localhost:8001/api/v1/designation/" + dId,
+    method: "DELETE",
+    async: true,
+    // data: formdata,
+    success: function (res) {
+      if (res.code == 200) {
+        // alert(res.message);
+        swal("Designation Delete!", res.message, "success");
+        loardAllDesignation();
+        clearAllDesignation();
+      }
+    },
+    error: function (ob) {
+      swal(
+        "Sorry!",
+        "Opps, something went wrong.  Designation Delete Error.",
+        "error"
+      );
     },
   });
 }
