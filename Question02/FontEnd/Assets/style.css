@@ -1,0 +1,70 @@
+/*start public style section*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+:root {
+  --maincol: #0079ff;
+  --txtcol: #fff;
+  --headerbgc: #333;
+  --mainbgc: rgba(0, 0, 0, 0.7);
+}
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+*::selection {
+  background: var(--maincol);
+  color: var(--txtcol);
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+}
+/*end public style section*/
+/*--------------------------------------*/
+/*start main page style*/
+.main_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+  gap: 25px;
+}
+.designation_box {
+  width: 100px;
+  height: 100px;
+  border: 5px solid gray;
+
+  text-align: center;
+}
+.view_and_add_box {
+  width: 100px;
+  height: 100px;
+  border: 5px solid gray;
+
+  text-align: center;
+}
+.main_page_box_topic {
+  margin-top: 25px;
+}
+/*end main page style*/
+/*------------------------------------*/
+/*start designation page style*/
+.form_main_container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  margin-left: 300px;
+  margin-top: 250px;
+}
+/*end designation page style*/
+/*-------------------------------*/
