@@ -2,6 +2,9 @@ loardAllDesignation();
 $("#save-designation-btn").click(() => {
   saveDesignation();
 });
+$("#update-designation-btn").click(() => {
+  updateDesignation();
+});
 
 function saveDesignation() {
   let designationName = $("#designationName").val();
@@ -28,6 +31,7 @@ function saveDesignation() {
 }
 
 function clearAllDesignation() {
+  $("#dId").val(" ");
   $("#designationName").val(" ");
   $("#remarks").val(" ");
 }
@@ -68,5 +72,29 @@ function blindClickEventDesignation() {
     $("#dId").val(did);
     $("#designationName").val(designationName);
     $("#remarks").val(remarks);
+  });
+}
+function updateDesignation() {
+  let dId = $("#dId").val();
+  let designationName = $("#designationName").val();
+  let remarks = $("#remarks").val();
+  console.log(designationName, remarks);
+
+  $.ajax({
+    method: "PUT",
+    contentType: "application/json",
+    url: "http://localhost:8001/api/v1/designation/" + dId,
+    async: true,
+    data: JSON.stringify({
+      designationName: designationName,
+      remarks: remarks,
+    }),
+    success: function (res) {
+      if (res.code == 200) {
+        swal("Designation Updated!", res.message, "success");
+        loardAllDesignation();
+        clearAllDesignation();
+      }
+    },
   });
 }
