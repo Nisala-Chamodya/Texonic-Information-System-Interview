@@ -8,4 +8,5 @@ import java.util.List;
 public interface DesignationService {
     public void addDesignation(DesignationDTO designationDTO);
     List<Designation> getAllDesignation();
+    Designation updateDesignation(String id,Designation designation);
 }
