@@ -4,6 +4,7 @@ import com.zoory.texonicinterview.designationservice.dto.DesignationDTO;
 import com.zoory.texonicinterview.designationservice.entity.Designation;
 import com.zoory.texonicinterview.designationservice.service.DesignationService;
 import com.zoory.texonicinterview.designationservice.util.ResponseUtill;
+import org.apache.tomcat.util.http.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,5 +30,11 @@ public class DesignationController {
     public ResponseUtill updateDesignation(@PathVariable String id, @RequestBody Designation designation){
         Designation designation1=designationService.updateDesignation(id,designation);
         return  new ResponseUtill(200,"Update Suceess",designation1);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseUtill deleteDesignation(@PathVariable String id){
+        Designation designation=designationService.deleteDesignation(id);
+        return new ResponseUtill(200,"Delete Designation",designation);
     }
 }

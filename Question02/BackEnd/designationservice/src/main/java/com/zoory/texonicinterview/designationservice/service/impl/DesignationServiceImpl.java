@@ -10,6 +10,7 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DesignationServiceImpl implements DesignationService {
@@ -48,4 +49,17 @@ public class DesignationServiceImpl implements DesignationService {
             throw new IllegalArgumentException("Designation with id " + id + " not found");
         }
     }
+
+    @Override
+    public Designation deleteDesignation(String id) {
+        Optional<Designation> optionalDesignation = designationRepo.findById(id);
+        if (designationRepo.existsById(id)) {
+            Designation designation = optionalDesignation.get();
+            designationRepo.deleteById(id);
+            return designation;
+        } else {
+            throw new IllegalArgumentException("Designation with id " + id + " not found");
+        }
+    }
+
 }
