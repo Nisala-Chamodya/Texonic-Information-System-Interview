@@ -47,6 +47,7 @@ function loardAllDesignation() {
             </tr>`;
           $("#designation-tbl-dat").append(row);
         }
+        blindClickEventDesignation();
       }
     },
     error: function (xhr, exception) {
@@ -56,5 +57,16 @@ function loardAllDesignation() {
         "error"
       );
     },
+  });
+}
+function blindClickEventDesignation() {
+  $("#designation-tbl-dat > tr").click(function () {
+    let did = $(this).children().eq(0).text();
+    let designationName = $(this).children().eq(1).text();
+    let remarks = $(this).children().eq(2).text();
+
+    $("#dId").val(did);
+    $("#designationName").val(designationName);
+    $("#remarks").val(remarks);
   });
 }
