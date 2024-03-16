@@ -61,10 +61,10 @@ html {
   width: 500px;
   height: 300px;
   border: 1px solid black;
-  display: flex;
-  justify-content: center;
+
   margin-left: 300px;
   margin-top: 250px;
 }
+
 /*end designation page style*/
 /*-------------------------------*/

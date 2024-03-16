@@ -5,12 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../Assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
   </head>
   <body>
     <!--Start main body-->
     <main class="form_main_container">
-      <!--start -->
+      <!--start form -->
+      <form>
+        <div class="mb-3">
+          <label for="designationName" class="form-label"
+            >Designation Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="designationName"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="remarks" class="form-label">Remarks</label>
+          <input type="text" class="form-control" id="remarks" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <!--End Form-->
+
+      <!--start table-->
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--end table-->
     </main>
     <!--End main body-->
+
+    <!--add boostrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+"></script>
   </body>
 </html>
