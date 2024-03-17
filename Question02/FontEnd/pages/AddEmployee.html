@@ -82,14 +82,14 @@
             <button
               type="button"
               class="btn btn-primary bg-info border-info"
-              id="cusUpdateBtn"
+              id="empUpdateBtn"
             >
               Update
             </button>
             <button
               type="button"
               class="btn btn-primary bg-danger border-danger"
-              id="cusDeleteBtn"
+              id="empDeleteBtn"
             >
               Delete
             </button>
@@ -113,10 +113,13 @@
             <thead>
               <th style="color: white">Employee ID</th>
               <th style="color: white">Full Name</th>
+              <th style="color: white">Designation</th>
               <th style="color: white">Date Of Join</th>
               <th style="color: white">Is Manager</th>
             </thead>
-            <tbody></tbody>
+            <tbody id="emp-details">
+              <tr></tr>
+            </tbody>
           </table>
         </form>
       </section>
@@ -135,6 +138,7 @@
     
     <!--Start sweet alert-->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!--end sweet alert-->
     
 
