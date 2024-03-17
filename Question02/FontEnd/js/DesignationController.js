@@ -104,25 +104,33 @@ function updateDesignation() {
 
 function deleteDesignation() {
   let dId = $("#dId").val();
-  $.ajax({
-    url: "http://localhost:8001/api/v1/designation/" + dId,
-    method: "DELETE",
-    async: true,
-    // data: formdata,
-    success: function (res) {
-      if (res.code == 200) {
-        // alert(res.message);
-        swal("Designation Delete!", res.message, "success");
-        loardAllDesignation();
-        clearAllDesignation();
-      }
-    },
-    error: function (ob) {
-      swal(
-        "Sorry!",
-        "Opps, something went wrong.  Designation Delete Error.",
-        "error"
-      );
-    },
+
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      $.ajax({
+        url: "http://localhost:8001/api/v1/designation/" + dId,
+        method: "DELETE",
+        async: true,
+        success: function (res) {
+          if (res.code == 200) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+            loardAllDesignation();
+            clearAllDesignation();
+          }
+        },
+      });
+    }
   });
 }
