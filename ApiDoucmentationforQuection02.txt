@@ -1,0 +1,9 @@
+http://localhost:8001/api/v1/designation --> Save Designation
+http://localhost:8001/api/v1/designation  -->GetAllDesignation
+http://localhost:8001/api/v1/designation/{id} --> Update All Designation
+http://localhost:8001/api/v1/designation/{id} --> DeleteAll Designation
+http://localhost:8002/api/v1/employee --> saveAllEmployee
+http://localhost:8002/api/v1/employee -->get all employee
+http://localhost:8002/api/v1/employee/{id} --> update all employee
+http://localhost:8002/api/v1/employee/{id} --> delete all employee
+
